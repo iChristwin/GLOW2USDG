@@ -19,6 +19,7 @@ library DAI2SLX {
 
     event Claim(address indexed to, uint256 indexed amount, uint256 indexed timestamp);
 
+    IERC20 public constant SLX = IERC20(0x1CbAd85Aa66Ff3C12dc84C5881886EEB29C1bb9b); // TODO: added DePIN token address
     IERC20 public constant DAI = IERC20(0x1CbAd85Aa66Ff3C12dc84C5881886EEB29C1bb9b); // ioDAI
     IMimo public constant MIMO = IMimo(0x147CdAe2BF7e809b9789aD0765899c06B361C5cE); // router
 
@@ -33,7 +34,7 @@ library DAI2SLX {
 
         address[] memory path = new address[](2);
         path[0] = address(DAI);
-        path[1] = 0x1CbAd85Aa66Ff3C12dc84C5881886EEB29C1bb9b; // TODO: added DePIN token address
+        path[1] = address(SLX);
 
         MIMO.swapExactTokensForTokensSupportingFeeOnTransferTokens(
             amountIn,
