@@ -11,4 +11,4 @@ remappings = [
 ]
 
 [rpc_endpoints]
-eth-mainnet = "https://ethereum-rpc.publicnode.com	
+eth-mainnet = "https://ethereum-rpc.publicnode.com"
